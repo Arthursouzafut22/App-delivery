@@ -6,7 +6,7 @@ import {
     Nunito_700Bold,
     useFonts,
 } from "@expo-google-fonts/nunito";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
 
 export default function HomeScreen() {
@@ -21,6 +21,11 @@ export default function HomeScreen() {
     <>
       <ThemeProvider theme={THEME}>
         <Global>
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent
+          />
           <Header />
         </Global>
       </ThemeProvider>

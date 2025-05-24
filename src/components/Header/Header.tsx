@@ -1,12 +1,22 @@
-import { Text } from "react-native";
+import { StatusBar } from "react-native";
 import * as S from "./Style";
-import { useTheme } from "styled-components";
 
 export default function Header() {
-    const theme = useTheme();
   return (
-    <S.Header hTheme={theme}>
-      <Text>Header....</Text>
-    </S.Header>
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <S.Header>
+        <S.Wrapper>
+          <S.Texto>Oi, Arthur</S.Texto>
+          <S.TextDescription>Pronto para cozinhar o jantar?</S.TextDescription>
+        </S.Wrapper>
+
+        <S.Image source={require("@/assets/images/avatar.png")} />
+      </S.Header>
+    </>
   );
 }
