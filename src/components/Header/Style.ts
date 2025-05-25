@@ -1,13 +1,12 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Header = styled.View`
+export const Header = styled.SafeAreaView`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 100px;
   width: 100%;
-  border: 1px solid red;
   background-color: ${({ theme }) => theme.colors.color_Primary};
 `;
 
@@ -26,6 +25,6 @@ export const TextDescription = styled.Text`
 `;
 
 export const Image = styled.Image`
-  width: ${RFValue(55)}px;
-  height: ${RFValue(55)}px;
+  width: ${RFValue(50)}px;
+  height: ${RFValue(50)}px;
 `;

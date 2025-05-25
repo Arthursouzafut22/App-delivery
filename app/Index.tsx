@@ -1,10 +1,11 @@
+import Carrosel from "@/src/components/Carrosel/Carrosel";
 import Header from "@/src/components/Header/Header";
 import { Global } from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
 import {
-    Nunito_400Regular,
-    Nunito_700Bold,
-    useFonts,
+  Nunito_400Regular,
+  Nunito_700Bold,
+  useFonts,
 } from "@expo-google-fonts/nunito";
 import { ActivityIndicator, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components";
@@ -16,7 +17,7 @@ export default function HomeScreen() {
   });
 
   if (!fontsLoaded) return <ActivityIndicator />;
-  
+
   return (
     <>
       <ThemeProvider theme={THEME}>
@@ -27,6 +28,7 @@ export default function HomeScreen() {
             translucent
           />
           <Header />
+          <Carrosel />
         </Global>
       </ThemeProvider>
     </>
