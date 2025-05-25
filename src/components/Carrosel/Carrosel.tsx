@@ -19,7 +19,7 @@ export default function Carrosel() {
   return (
     <S.CarroselContainer>
       <FlatList
-        style={{ height: 190, borderRadius: 10 }}
+        style={{ height: 170 }}
         horizontal
         ItemSeparatorComponent={() => <View style={{ width: 15 }}></View>}
         onViewableItemsChanged={referenceIndex.current}

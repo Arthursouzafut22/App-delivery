@@ -1,4 +1,5 @@
 import Carrosel from "@/src/components/Carrosel/Carrosel";
+import Category from "@/src/components/Category/Category";
 import Header from "@/src/components/Header/Header";
 import { Global } from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
@@ -29,6 +30,7 @@ export default function HomeScreen() {
           />
           <Header />
           <Carrosel />
+          <Category />
         </Global>
       </ThemeProvider>
     </>

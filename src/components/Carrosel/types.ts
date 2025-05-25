@@ -1,6 +1,5 @@
 import { ViewToken } from "react-native";
 
-
 export interface ImgsProps {
   id: string;
   source: any;
