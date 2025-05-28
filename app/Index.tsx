@@ -1,6 +1,4 @@
-import Carrosel from "@/src/components/Carrosel/Carrosel";
-import Category from "@/src/components/Category/Category";
-import Header from "@/src/components/Header/Header";
+import Home from "@/src/Screens/Home";
 import { Global } from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
 import {
@@ -8,7 +6,7 @@ import {
   Nunito_700Bold,
   useFonts,
 } from "@expo-google-fonts/nunito";
-import { ActivityIndicator, StatusBar } from "react-native";
+import { ActivityIndicator } from "react-native";
 import { ThemeProvider } from "styled-components";
 
 export default function HomeScreen() {
@@ -23,14 +21,7 @@ export default function HomeScreen() {
     <>
       <ThemeProvider theme={THEME}>
         <Global>
-          <StatusBar
-            barStyle="light-content"
-            backgroundColor="transparent"
-            translucent
-          />
-          <Header />
-          <Carrosel />
-          <Category />
+        <Home/>
         </Global>
       </ThemeProvider>
     </>

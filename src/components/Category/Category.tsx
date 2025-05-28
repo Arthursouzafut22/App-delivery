@@ -1,9 +1,14 @@
 import { FlatList, View } from "react-native";
 import * as S from "./Style";
 import { arrButtonsCategory } from "./utils";
+import { useState } from "react";
 
 export default function Category() {
- 
+  const [indexButton, setIndexButton] = useState<number>(0);
+
+  function handleCategory(index: number) {
+    setIndexButton(index);
+  }
 
   return (
     <S.ContainerCategory>
@@ -18,11 +23,19 @@ export default function Category() {
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{ width: 12 }}></View>}
           data={arrButtonsCategory}
-          keyExtractor={(item) => item.type}
-          renderItem={({ item }) => (
-            <S.ButtonCategory>
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ item, index }) => (
+            <S.ButtonCategory
+              onPress={() => handleCategory(index)}
+              accessibilityRole="button"
+              accessibilityLabel={item.type}
+              activeOpacity={0.9}
+              activeButton={index === indexButton}
+            >
               <S.ImageCategory source={item.source} />
-              <S.TextButton>{item.type}</S.TextButton>
+              <S.TextButton activeText={index === indexButton}>
+                {item.type}
+              </S.TextButton>
             </S.ButtonCategory>
           )}
         />

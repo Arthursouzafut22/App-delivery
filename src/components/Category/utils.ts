@@ -3,7 +3,6 @@ interface CategoryProps {
   source: any;
 }
 
-
 export const arrButtonsCategory: CategoryProps[] = [
   {
     type: "Burger",
