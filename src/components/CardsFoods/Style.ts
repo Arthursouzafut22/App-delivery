@@ -1,14 +1,17 @@
 import styled from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const ContainerCardsFoods = styled.View`
+export const ContainerCardsFoods = styled.SafeAreaView`
   margin-top: ${RFValue(25)}px;
+  /* flex: 1; */
   flex-direction: row;
+  align-items: center;
   gap: 15px;
 `;
 
-export const CardFood = styled.View`
+export const CardFood = styled.SafeAreaView`
   flex: 1;
+  height: auto;
   height: ${RFValue(175)}px;
   padding: 10px;
   border-radius: 8px;

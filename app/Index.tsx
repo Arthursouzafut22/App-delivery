@@ -1,4 +1,5 @@
-import Home from "@/src/Screens/Home";
+import CategoryContext from "@/context/ContextCategory/useContextCategory";
+import Home from "@/src/Screens/Home/Home";
 import { Global } from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
 import {
@@ -20,9 +21,11 @@ export default function HomeScreen() {
   return (
     <>
       <ThemeProvider theme={THEME}>
-        <Global>
-        <Home/>
-        </Global>
+        <CategoryContext>
+          <Global>
+            <Home />
+          </Global>
+        </CategoryContext>
       </ThemeProvider>
     </>
   );

@@ -1,14 +1,10 @@
+import { useAuthCategory } from "@/context/ContextCategory/useContextCategory";
 import { FlatList, View } from "react-native";
 import * as S from "./Style";
 import { arrButtonsCategory } from "./utils";
-import { useState } from "react";
 
 export default function Category() {
-  const [indexButton, setIndexButton] = useState<number>(0);
-
-  function handleCategory(index: number) {
-    setIndexButton(index);
-  }
+  const { indexButton, handleCategory } = useAuthCategory();
 
   return (
     <S.ContainerCategory>
@@ -26,7 +22,7 @@ export default function Category() {
           keyExtractor={(_, index) => index.toString()}
           renderItem={({ item, index }) => (
             <S.ButtonCategory
-              onPress={() => handleCategory(index)}
+              onPress={() => handleCategory(index, item.type)}
               accessibilityRole="button"
               accessibilityLabel={item.type}
               activeOpacity={0.9}
