@@ -1,7 +1,10 @@
 import CategoryContext from "@/context/ContextCategory/useContextCategory";
-import Home from "@/src/Screens/Home/Home";
+import Home from "@/src/Screens/Home/Home/Home";
 import { Global } from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
+import Index from "@/routes/Index";
+
+
 import {
   Nunito_400Regular,
   Nunito_700Bold,

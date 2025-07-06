@@ -19,7 +19,7 @@ export default function Category() {
           showsHorizontalScrollIndicator={false}
           ItemSeparatorComponent={() => <View style={{ width: 12 }}></View>}
           data={arrButtonsCategory}
-          keyExtractor={(_, index) => index.toString()}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item, index }) => (
             <S.ButtonCategory
               onPress={() => handleCategory(index, item.type)}

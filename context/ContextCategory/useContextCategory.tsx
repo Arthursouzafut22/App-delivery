@@ -1,7 +1,14 @@
 import { useFetchFoods } from "@/hooks/UseFetchFoods";
-import { createContext, PropsWithChildren, useContext, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useCallback,
+  useState,
+} from "react";
 import { PropsContext } from "./types";
 import { FoodProps } from "@/hooks/types";
+import { useFocusEffect } from "@react-navigation/native";
 
 const ContextCategory = createContext<PropsContext>({} as PropsContext);
 
@@ -22,6 +29,15 @@ const CategoryContext = ({ children }: PropsWithChildren) => {
     setFoodData(dataFood);
     setIndexButton(index);
   }
+
+  useFocusEffect(
+    useCallback(() => {
+      (async () => {
+        const dataFood = await fetchFoods("/" + "burger");
+        setFoodData(dataFood);
+      })();
+    }, [fetchFoods])
+  );
 
   return (
     <ContextCategory.Provider value={{ indexButton, handleCategory, foodData }}>

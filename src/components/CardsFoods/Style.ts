@@ -11,11 +11,16 @@ export const ContainerCardsFoods = styled.SafeAreaView`
 
 export const CardFood = styled.SafeAreaView`
   flex: 1;
-  height: auto;
-  height: ${RFValue(175)}px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-height: ${RFValue(200)}px;
+  min-height: ${RFValue(180)}px;
   padding: 10px;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.color_Secondary};
+  max-width:170px !important;
+
 `;
 
 export const ImageFood = styled.Image`
