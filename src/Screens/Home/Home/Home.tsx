@@ -1,6 +1,6 @@
 import { useAuthCategory } from "@/context/ContextCategory/useContextCategory";
 import { FlatList, SafeAreaView, View } from "react-native";
-import CardsFoods from "../../../components/CardsFoods/CardsFoods";
+import CardsFoods from "@/src/components/CardsFoods/CardsFoods";
 import Carrosel from "../../../components/Carrosel/Carrosel";
 import Category from "../../../components/Category/Category";
 import Header from "../../../components/Header/Header";

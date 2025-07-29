@@ -1,10 +1,6 @@
 import CategoryContext from "@/context/ContextCategory/useContextCategory";
-import Home from "@/src/Screens/Home/Home/Home";
-import { Global } from "@/src/styles/Global";
+import Global from "@/src/styles/Global";
 import { THEME } from "@/src/styles/Themee";
-import Index from "@/routes/Index";
-
-
 import {
   Nunito_400Regular,
   Nunito_700Bold,
@@ -12,8 +8,10 @@ import {
 } from "@expo-google-fonts/nunito";
 import { ActivityIndicator } from "react-native";
 import { ThemeProvider } from "styled-components";
-
-export default function HomeScreen() {
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Slot, Tabs } from "expo-router";
+import Home from "@/src/Screens/Home/Home/Home";
+export default function LayoutRoot() {
   const [fontsLoaded] = useFonts({
     Nunito_400Regular,
     Nunito_700Bold,
@@ -23,13 +21,16 @@ export default function HomeScreen() {
 
   return (
     <>
-      <ThemeProvider theme={THEME}>
-        <CategoryContext>
-          <Global>
-            <Home />
-          </Global>
-        </CategoryContext>
-      </ThemeProvider>
+      <SafeAreaProvider>
+        <ThemeProvider theme={THEME}>
+          <CategoryContext>
+            <Global />
+        
+            <Slot />
+          
+          </CategoryContext>
+        </ThemeProvider>
+      </SafeAreaProvider>
     </>
   );
 }

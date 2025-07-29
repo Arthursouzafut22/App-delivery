@@ -18,7 +18,7 @@ export default function CardsFoods({ food }: Props) {
       <S.TextName>{food?.nome}</S.TextName>
       <S.TextPrice>{food.preco}</S.TextPrice>
       <S.ContainerAssessment>
-        {new Array(food.avaliacao).fill(food.avaliacao).map((_,index) => (
+        {new Array(food.avaliacao).fill(food.avaliacao).map((_, index) => (
           <FontAwesome
             name="star"
             key={index}
